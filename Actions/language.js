@@ -13,6 +13,8 @@ export const actions = {
         }
     },
     setLanguage: (language) =>{
+        console.log("Set Language Action Creator");
+        console.log(language);
         return {
             type: constants.SET_LANGUAGE,
             payload: language

@@ -1,29 +1,7 @@
 
 import {constants} from "../Actions/language";
+import {LANGUAGE_TYPES, STRINGS} from "../Constants/Utilities";
 
-const LANGUAGE_TYPES = {
-    en: "en",
-    es: "es"
-}
-
-const STRINGS = {
-    'en': {
-        OK: "OK",
-        CANCEL: "Cancel",
-        Back: "Back",
-        Store: "Store",
-        ThankYou: "Thank You",
-        Welcome: "You're Welcome"
-    },
-    'es': {
-        OK: "OK",
-        CANCEL: "Cancelar",
-        Back: "Regresa",
-        Store: "Tienda",
-        ThankYou: "Gracias",
-        Welcome: "De nada"
-    }
-}
 
 const initialState = {
     language: LANGUAGE_TYPES.en,
@@ -38,14 +16,13 @@ export function reducer(state = initialState, action) {
 
         case constants.SET_LANGUAGE:
             let lang = null
-            key = action.payload.language
-            if (myObj.hasOwnProperty(key)) {
-                lang = LANGUAGE_TYPES[key]
-            } else {
-                lang = state.language
-            }
+            key = action.payload
+            console.log(key)
+            lang = key
+            language_strings = STRINGS[key]
             return { ...state,
-                language: lang
+                language: lang,
+                language_strings: language_strings
             }
 
         default:
