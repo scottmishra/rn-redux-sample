@@ -41,13 +41,7 @@ class ButtonToggles extends Component{
             <View>
                 <Button
                     onPress={this.buttonPress}
-                    title="ES"
-                    color= {this.state.button_color}
-                    accessibilityLabel="Switch Language to English"
-                />
-                <Button
-                    onPress={this.buttonPress}
-                    title="EN"
+                    title={this.props.languages}
                     color={this.state.button_color}
                     accessibilityLabel="Switch Language to Spanish"
                 />
